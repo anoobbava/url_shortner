@@ -4,9 +4,19 @@ class UrlsController < ApplicationController
   def create
     url_instance = UrlDetail.check_url(full_url)
     if url_instance.save
-      render status: :ok, json: { shortend_url: generated_url(url_instance), message: 'successfully created' }
+      render status: :ok, json: { short_url: generated_url(url_instance), message: 'successfully created' }
     else
       render status: :bad_request, json: { message: url_instance.errors.full_messages }
+    end
+  end
+
+  def redirect_to_original_url
+    url = request.original_url
+    url_instance = UrlDetail.find_by(short_url: url.split('?')[1]) if url
+    if url_instance
+      redirect_to url_instance.original_url
+    else
+      render status: :not_found, json: { message: 'no data found' }
     end
   end
 
