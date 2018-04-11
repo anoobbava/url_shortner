@@ -1,6 +1,21 @@
 # controller to handle the urls
 class UrlsController < ApplicationController
   before_action :validate_input_url, only: [:create]
+  resource_description do
+    short 'API for shortening large urls'
+  end
+
+  api :POST, '/url', 'Create Urls'
+  description <<-EOS
+  == Create Urls
+    This API is used to create the short urls from large urls.
+  EOS
+  error code: 200, desc: 'Success Response'
+  error code: 400, desc: 'Bad Request'
+  param :url, Hash, description: 'Large Url inputs', required: true do
+    param :origin_url, String, desc: 'Url need to shorten', required: true
+  end
+
   def create
     url_instance = UrlDetail.check_url(full_url)
     if url_instance.save
