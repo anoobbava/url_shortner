@@ -1,0 +1,18 @@
+{
+    "urls#create": [
+    {
+        "verb": "POST",
+        "path": "/url",
+        "query": null,
+        "code": 200,
+        "show_in_doc": 1,
+        "recorded": false,
+        "request_data": "https://github.com/stympy/faker/blob/master/doc/internet.md",
+        "page": 1,
+        "response_data": {
+                "shortend_url": "http://localhost:3000/?7c352d6",
+                "message": "successfully created"
+            }
+        }
+        ]
+        }
