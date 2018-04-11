@@ -1,0 +1,9 @@
+{<img src="https://codeclimate.com/github/anoobbava/url_shortner/badges/gpa.svg" />}[https://codeclimate.com/github/anoobbava/url_shortner]
+{<img src="https://codeclimate.com/github/anoobbava/url_shortner/badges/coverage.svg" />}[https://codeclimate.com/github/anoobbava/url_shortner/coverage]
+{<img src="https://codeclimate.com/github/anoobbava/url_shortner/badges/issue_count.svg" />}[https://codeclimate.com/github/anoobbava/url_shortner]
+{<img src="https://travis-ci.org/anoobbava/url_shortner.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/anoobbava/url_shortner]
+
+
+== url shortner
+API only project in ROR to shorten the urls
+
