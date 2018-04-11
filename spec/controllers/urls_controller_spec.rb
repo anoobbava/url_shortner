@@ -36,7 +36,7 @@ RSpec.describe UrlsController, type: :controller do
 
     it 'raise 400 error' do
       post :create, params: { url: @no_data }, format: :json
-      json_response = JSON.parse(response.body)
+      JSON.parse(response.body)
       expect(response.bad_request?).to be(true)
       expect(response.status).to eq(400)
     end
@@ -51,6 +51,21 @@ RSpec.describe UrlsController, type: :controller do
       expect(json_response['message']).to eq(message)
       expect(url_instance.id).to eq(UrlDetail.last.id)
       expect(response.status).to eq(200)
+    end
+  end
+
+  describe 'Get #redirect_to_original_url' do
+    it 'return no data found message if not match' do
+      url = { short_url: '3907215' }
+      get :redirect_to_original_url, params: { url: url }
+      json_response = JSON.parse(response.body)
+      expect(json_response['message']).to eq('no data found')
+      expect(response.status).to eq(404)
+    end
+    it 'not redirect_to to the path' do
+      url_data = FactoryBot.create(:valid_url)
+      get :redirect_to_original_url, params: { nil: '?7c352d6' }
+      expect(response.status).to eq(404)
     end
   end
 end
