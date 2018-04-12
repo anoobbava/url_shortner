@@ -1,5 +1,5 @@
 # controller to handle the urls
-class UrlsController < ApplicationController
+class UrlsController < ApiController
   before_action :validate_input_url, only: [:create]
   resource_description do
     short 'API for shortening large urls'

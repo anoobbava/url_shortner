@@ -10,7 +10,7 @@
         "request_data": "https://github.com/stympy/faker/blob/master/doc/internet.md",
         "page": 1,
         "response_data": {
-                "shortend_url": "http://localhost:3000/?7c352d6",
+                "short_url": "http://localhost:3000/?7c352d6",
                 "message": "successfully created"
             }
         }
