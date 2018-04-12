@@ -7,3 +7,24 @@
 == url shortner
 API only project in ROR to shorten the urls
 
+
+
+Requirements
+Ruby 2.4.1
+
+Setup
+git clone https://github.com/anoobbava/url_shortner.git
+cd url_shortner
+bundle install
+Setting up local development database
+bundle exec rake db:create
+bundle exec rake db:migrate
+
+Running the development server
+bundle exec rails server
+
+Testing
+bundle exec rspec
+
+Apidoc
+Access api-doc via '#{Rails.root}/url_doc/'
