@@ -7,6 +7,7 @@ end
 gem 'apipie-rails', '~> 0.5.7'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
+gem 'responders', '~> 2.4'
 gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
